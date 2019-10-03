@@ -1,7 +1,7 @@
 @{
 
     # Script module or binary module file associated with this manifest.
-    RootModule        = 'posh-gitmoji'
+    RootModule        = 'posh-gitmoji.psm1'
 
     # Version number of this module.
     ModuleVersion     = '0.0.1'
@@ -22,10 +22,10 @@
     Copyright         = '(c) Krokofant. All rights reserved.'
 
     # Description of the functionality provided by this module
-    # Description = ''
+    Description       = 'Provides autocompletion for gitmoji'
 
     # Minimum version of the PowerShell engine required by this module
-    # PowerShellVersion = '6.0.0'
+    PowerShellVersion = '6.0.0'
 
     # Name of the PowerShell host required by this module
     # PowerShellHostName = ''
@@ -96,7 +96,7 @@
             # LicenseUri = ''
 
             # A URL to the main website for this project.
-            # ProjectUri = ''
+            ProjectUri = 'https://github.com/krokofant/posh-gitmoji'
 
             # A URL to an icon representing this module.
             # IconUri = ''
