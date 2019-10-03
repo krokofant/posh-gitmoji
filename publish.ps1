@@ -8,5 +8,5 @@ function LoadDotEnv {
 }
 
 Publish-Module `
-    -Path $PSScriptRoot `
-    -NuGetApiKey (LoadDotEnv).Key `
+    -Path $PSScriptRoot\posh-gitmoji `
+    -NuGetApiKey (LoadDotEnv).Key
