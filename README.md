@@ -1,16 +1,24 @@
+# posh-gitmoji
+
+posh-gitmoji makes it easier to use [gitmoji](https://github.com/carloscuesta/gitmoji/) in your terminal. It work's best with the [Windows Terminal](https://github.com/microsoft/terminal) for it's emoji support so you can see the emojis rendered before you make your commits.
+
 # Installation
 
-First install dependencies, [the Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
+First install dependencies:
+
+- [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
+- [Windows Terminal](https://github.com/microsoft/terminal)
 
 ```powershell
 # Run as admin
-Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'
-az login
+choco install -y azure-cli
+choco install -y microsoft-windows-terminal
 ```
 
 To autocomplete Azure DevOps story IDs you need to setup your default azure devops organization and project:
 
 ```powershell
+az login
 az devops configure --defaults organization=$(Read-Host DefaultOrganizationURL) project=$(Read-Host DefaultProjectName)
 ```
 
