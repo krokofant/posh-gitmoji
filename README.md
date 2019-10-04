@@ -1,13 +1,18 @@
 # Installation
 
-First install dependencies
+First install dependencies, [the Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
 
 ```powershell
-Install-Module Configuration -Scope CurrentUser
+# Run as admin
+Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'
+az login
 ```
 
-And if you'd like to autocomplete Azure DevOps story IDs your need the azure cli as well:
-https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
+To autocomplete Azure DevOps story IDs you need to setup your default azure devops organization and project:
+
+```powershell
+az devops configure --defaults organization=$(Read-Host DefaultOrganizationURL) project=$(Read-Host DefaultProjectName)
+```
 
 Then install the module:
 
