@@ -77,7 +77,7 @@ $script:LastAzureQueryDate = $null
 [System.Management.Automation.Job]$script:AzureQueryJob = $null
 function GetAzureQueryString {
     @"
-Select [System.Id], [System.Title], [System.State], [System.AreaPath] From WorkItems Where [System.WorkItemType] = 'Story' AND [State] = 'Developing' AND [System.AreaPath] = '$($script:Config.AreaPath)' order by [System.CreatedDate] desc
+Select [System.Id], [System.Title], [System.State], [System.AreaPath] From WorkItems Where [State] = 'Developing' AND [System.AreaPath] = '$($script:Config.AreaPath)' order by [System.CreatedDate] desc
 "@
 }
 
