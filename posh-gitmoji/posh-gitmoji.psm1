@@ -5,7 +5,7 @@ $script:EMOJIS = [pscustomobject[]]@(
     @{emoji = "🐛"; code = "bug"; desc = "Fixing a bug." },
     @{emoji = "🚑"; code = "ambulance"; desc = "Critical hotfix." },
     @{emoji = "✨"; code = "sparkles"; desc = "Introducing new features." },
-    @{emoji = "📝"; code = "memo"; desc = "Writing docs." },
+    @{emoji = "📝"; code = "pencil"; desc = "Writing docs." },
     @{emoji = "🚀"; code = "rocket"; desc = "Deploying stuff." },
     @{emoji = "💄"; code = "lipstick"; desc = "Updating the UI and style files." },
     @{emoji = "🎉"; code = "tada"; desc = "Initial commit." },
@@ -32,7 +32,7 @@ $script:EMOJIS = [pscustomobject[]]@(
     @{emoji = "🔧"; code = "wrench"; desc = "Changing configuration files." },
     @{emoji = "🌐"; code = "globe_with_meridians"; desc = "Internationalization and localization." },
     @{emoji = "✏️"; code = "pencil2"; desc = "Fixing typos." },
-    @{emoji = "💩"; code = "hankey"; desc = "Writing bad code that needs to be improved." },
+    @{emoji = "💩"; code = "poop"; desc = "Writing bad code that needs to be improved." },
     @{emoji = "⏪"; code = "rewind"; desc = "Reverting changes." },
     @{emoji = "🔀"; code = "twisted_rightwards_arrows"; desc = "Merging branches." },
     @{emoji = "📦"; code = "package"; desc = "Updating compiled files or packages." },
@@ -60,7 +60,11 @@ $script:EMOJIS = [pscustomobject[]]@(
     @{emoji = "⚗"; code = "alembic"; desc = "Experimenting new things" },
     @{emoji = "🔍"; code = "mag"; desc = "Improving SEO" },
     @{emoji = "☸️"; code = "wheel_of_dharma"; desc = "Work about Kubernetes" },
-    @{emoji = "🏷️"; code = "label"; desc = "Adding or updating types (Flow, TypeScript)" }
+    @{emoji = "🏷️"; code = "label"; desc = "Adding or updating types (Flow, TypeScript)" },
+    @{emoji = "🌱"; code = "seedling"; desc = "Adding or updating seed files" },
+    @{emoji = "🚩"; code = "triangular_flag_on_post"; desc = "Adding, updating, or removing feature flags" },
+    @{emoji = "🥅"; code = "goal_net"; desc = "Catching errors" },
+    @{emoji = "💫"; code = "dizzy"; desc = "Adding or updating animations and transitions" }
 )
 
 $script:Config = @{
