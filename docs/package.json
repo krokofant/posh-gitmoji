@@ -27,7 +27,7 @@
     "format": "prettier --write '**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "predeploy": "gatsby build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d public"
   },
   "devDependencies": {
     "gh-pages": "^2.1.1",
