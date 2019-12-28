@@ -2,6 +2,8 @@
 
 posh-gitmoji makes it easier to use [gitmoji](https://github.com/carloscuesta/gitmoji/) in your terminal. It work's best with the [Windows Terminal](https://github.com/microsoft/terminal) for it's emoji support so you can see the emojis rendered before you make your commits.
 
+![Commands](./docs/src/assets/images/gitmoji-commands-full.png)
+
 # Installation
 
 First install dependencies:
