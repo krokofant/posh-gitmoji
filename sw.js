@@ -27,20 +27,20 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-54e228ff40adb4276588.js"
+    "url": "webpack-runtime-efa2cbfa93919d5f7ea8.js"
   },
   {
     "url": "commons-3c711f919f3df9127ac7.js"
   },
   {
-    "url": "app-1ce706928c051728679b.js"
+    "url": "app-9f7438a75de52efa842e.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-a7388efdc62430243a75.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "fb1c3ec67ee99d618572f741618ff99b"
+    "revision": "5b6d08408562daa07d77394583186f32"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
@@ -71,12 +71,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   }
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^`), ``)
+  pathname = pathname.replace(new RegExp(`^/posh-gitmoji`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-1ce706928c051728679b.js`))) {
+  if (!resources || !(await caches.match(`/posh-gitmoji/app-9f7438a75de52efa842e.js`))) {
     return await fetch(event.request)
   }
 
@@ -89,7 +89,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/posh-gitmoji/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
