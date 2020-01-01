@@ -1,17 +1,19 @@
 module.exports = {
+  pathPrefix: '/posh-gitmoji',
   siteMetadata: {
-    title: 'Gatsby Starter - Stellar by HTML5 UP',
-    author: 'Hunter Chang',
-    description: 'A Gatsby.js Starter based on Stellar by HTML5 UP',
+    title: 'posh-gitmoji - gitmoji in your terminal',
+    author: 'Krokofant',
+    description:
+      'A powershell interactive emoji guide for your commit messages',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
-        start_url: '/',
+        name: 'posh-gitmoji',
+        short_name: 'posh-gitmoji',
+        start_url: 'https://krokofant.github.io/posh-gitmoji/',
         background_color: '#663399',
         theme_color: '#663399',
         display: 'minimal-ui',
