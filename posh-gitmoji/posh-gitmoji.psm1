@@ -1,71 +1,4 @@
-$script:EMOJIS = [pscustomobject[]]@(
-    @{emoji = "🎨"; code = "art"; desc = "Improving structure / format of the code." },
-    @{emoji = "⚡️"; code = "zap"; desc = "Improving performance." },
-    @{emoji = "🔥"; code = "fire"; desc = "Removing code or files." },
-    @{emoji = "🐛"; code = "bug"; desc = "Fixing a bug." },
-    @{emoji = "🚑"; code = "ambulance"; desc = "Critical hotfix." },
-    @{emoji = "✨"; code = "sparkles"; desc = "Introducing new features." },
-    @{emoji = "📝"; code = "pencil"; desc = "Writing docs." },
-    @{emoji = "🚀"; code = "rocket"; desc = "Deploying stuff." },
-    @{emoji = "💄"; code = "lipstick"; desc = "Updating the UI and style files." },
-    @{emoji = "🎉"; code = "tada"; desc = "Initial commit." },
-    @{emoji = "✅"; code = "white_check_mark"; desc = "Updating tests." },
-    @{emoji = "🔒"; code = "lock"; desc = "Fixing security issues." },
-    @{emoji = "🍎"; code = "apple"; desc = "Fixing something on macOS." },
-    @{emoji = "🐧"; code = "penguin"; desc = "Fixing something on Linux." },
-    @{emoji = "🏁"; code = "checkered_flag"; desc = "Fixing something on Windows." },
-    @{emoji = "🤖"; code = "robot"; desc = "Fixing something on Android." },
-    @{emoji = "🍏"; code = "green_apple"; desc = "Fixing something on iOS." },
-    @{emoji = "🔖"; code = "bookmark"; desc = "Releasing / Version tags." },
-    @{emoji = "🚨"; code = "rotating_light"; desc = "Removing linter warnings." },
-    @{emoji = "🚧"; code = "construction"; desc = "Work in progress." },
-    @{emoji = "💚"; code = "green_heart"; desc = "Fixing CI Build." },
-    @{emoji = "⬇️"; code = "arrow_down"; desc = "Downgrading dependencies." },
-    @{emoji = "⬆️"; code = "arrow_up"; desc = "Upgrading dependencies." },
-    @{emoji = "📌"; code = "pushpin"; desc = "Pinning dependencies to specific versions." },
-    @{emoji = "👷"; code = "construction_worker"; desc = "Adding CI build system." },
-    @{emoji = "📈"; code = "chart_with_upwards_trend"; desc = "Adding analytics or tracking code." },
-    @{emoji = "♻️"; code = "recycle"; desc = "Refactoring code." },
-    @{emoji = "🐳"; code = "whale"; desc = "Work about Docker." },
-    @{emoji = "➕"; code = "heavy_plus_sign"; desc = "Adding a dependency." },
-    @{emoji = "➖"; code = "heavy_minus_sign"; desc = "Removing a dependency." },
-    @{emoji = "🔧"; code = "wrench"; desc = "Changing configuration files." },
-    @{emoji = "🌐"; code = "globe_with_meridians"; desc = "Internationalization and localization." },
-    @{emoji = "✏️"; code = "pencil2"; desc = "Fixing typos." },
-    @{emoji = "💩"; code = "poop"; desc = "Writing bad code that needs to be improved." },
-    @{emoji = "⏪"; code = "rewind"; desc = "Reverting changes." },
-    @{emoji = "🔀"; code = "twisted_rightwards_arrows"; desc = "Merging branches." },
-    @{emoji = "📦"; code = "package"; desc = "Updating compiled files or packages." },
-    @{emoji = "👽"; code = "alien"; desc = "Updating code due to external API changes." },
-    @{emoji = "🚚"; code = "truck"; desc = "Moving or renaming files." },
-    @{emoji = "📄"; code = "page_facing_up"; desc = "Adding or updating license." },
-    @{emoji = "💥"; code = "boom"; desc = "Introducing breaking changes." },
-    @{emoji = "🍱"; code = "bento"; desc = "Adding or updating assets." },
-    @{emoji = "👌"; code = "ok_hand"; desc = "Updating code due to code review changes." },
-    @{emoji = "♿️"; code = "wheelchair"; desc = "Improving accessibility." },
-    @{emoji = "💡"; code = "bulb"; desc = "Documenting source code." },
-    @{emoji = "🍻"; code = "beers"; desc = "Writing code drunkenly." },
-    @{emoji = "💬"; code = "speech_balloon"; desc = "Updating text and literals." },
-    @{emoji = "🗃"; code = "card_file_box"; desc = "Performing database related changes." },
-    @{emoji = "🔊"; code = "loud_sound"; desc = "Adding logs." },
-    @{emoji = "🔇"; code = "mute"; desc = "Removing logs." },
-    @{emoji = "👥"; code = "busts_in_silhouette"; desc = "Adding contributor(s)." },
-    @{emoji = "🚸"; code = "children_crossing"; desc = "Improving user experience / usability." },
-    @{emoji = "🏗"; code = "building_construction"; desc = "Making architectural changes." },
-    @{emoji = "📱"; code = "iphone"; desc = "Working on responsive design." },
-    @{emoji = "🤡"; code = "clown_face"; desc = "Mocking things." },
-    @{emoji = "🥚"; code = "egg"; desc = "Adding an easter egg." },
-    @{emoji = "🙈"; code = "see_no_evil"; desc = "Adding or updating a .gitignore file" },
-    @{emoji = "📸"; code = "camera_flash"; desc = "Adding or updating snapshots" },
-    @{emoji = "⚗"; code = "alembic"; desc = "Experimenting new things" },
-    @{emoji = "🔍"; code = "mag"; desc = "Improving SEO" },
-    @{emoji = "☸️"; code = "wheel_of_dharma"; desc = "Work about Kubernetes" },
-    @{emoji = "🏷️"; code = "label"; desc = "Adding or updating types (Flow, TypeScript)" },
-    @{emoji = "🌱"; code = "seedling"; desc = "Adding or updating seed files" },
-    @{emoji = "🚩"; code = "triangular_flag_on_post"; desc = "Adding, updating, or removing feature flags" },
-    @{emoji = "🥅"; code = "goal_net"; desc = "Catching errors" },
-    @{emoji = "💫"; code = "dizzy"; desc = "Adding or updating animations and transitions" }
-)
+[pscustomobject[]]$script:EMOJIS = (Get-Content $PSScriptRoot/gitmojis.json | ConvertFrom-Json).gitmojis
 
 $script:Config = @{
     AreaPath = ""
@@ -122,13 +55,13 @@ function gitmoji {
 
 $gitmojiTypeCompleter = {
     param($commandName, $parameterName, $wordToComplete, $commandAst, $fakeBoundParameters)
-    [scriptblock]$RenderHint = { "$($_.emoji) <# $($_.desc) #> " }
+    [scriptblock]$RenderHint = { "$($_.emoji) <# $($_.description) #> " }
     if ($wordToComplete.Length -eq 0) {
         return $script:EMOJIS | ForEach-Object $RenderHint
     }
     $codeMatches = $script:EMOJIS | Where-Object { ($_.code).StartsWith($wordToComplete) } | ForEach-Object $RenderHint
     $codeContains = $script:EMOJIS | Where-Object { ($_.code) -match "$wordToComplete" } | ForEach-Object $RenderHint
-    $descContains = $script:EMOJIS | Where-Object { ($_.desc) -match "$wordToComplete" } | ForEach-Object $RenderHint
+    $descContains = $script:EMOJIS | Where-Object { ($_.description) -match "$wordToComplete" } | ForEach-Object $RenderHint
     @($codeMatches) + $codeContains + $descContains | Sort-Object -Unique
 }
 Register-ArgumentCompleter -CommandName gitmoji -ParameterName Type -ScriptBlock $gitmojiTypeCompleter
