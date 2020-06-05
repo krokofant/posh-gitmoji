@@ -20,6 +20,7 @@ choco install -y microsoft-windows-terminal
 To autocomplete Azure DevOps story IDs you need to setup your default azure devops organization and project:
 
 ```powershell
+az extension add --name azure-devops
 az login
 az devops configure --defaults organization=$(Read-Host DefaultOrganizationURL) project=$(Read-Host DefaultProjectName)
 ```
