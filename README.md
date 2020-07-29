@@ -6,6 +6,14 @@ posh-gitmoji makes it easier to use [gitmoji](https://github.com/carloscuesta/gi
 
 # Installation
 
+```powershell
+Install-Module posh-gitmoji
+```
+
+Now you can type `gitmoji <tab>` and `<tab>` to autocomplete any gitmoji
+
+## Additional stuff (Optional)
+
 First install dependencies:
 
 - [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
