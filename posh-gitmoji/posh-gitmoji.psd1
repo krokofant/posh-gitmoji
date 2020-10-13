@@ -4,10 +4,10 @@
     RootModule        = 'posh-gitmoji.psm1'
 
     # Version number of this module.
-    ModuleVersion     = '3.0.0'
+    ModuleVersion     = '3.0.1'
 
     # Supported PSEditions
-    # CompatiblePSEditions = @()
+    CompatiblePSEditions = @('Core')
 
     # ID used to uniquely identify this module
     GUID              = '479c77ec-93cc-443b-9751-5bd14f5408ea'
