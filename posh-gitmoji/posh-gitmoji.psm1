@@ -37,7 +37,7 @@ function gitmoji {
     [CmdletBinding()]
     param (
         [Parameter()]
-        [string]$Type,
+        [string[]]$Type,
         [Parameter()]
         [string]$Message,
         [Parameter()]
@@ -51,7 +51,7 @@ function gitmoji {
         SaveConfig
         return
     }
-    $command = "git commit $(if($All){'-a '})-m `"$Type $($(if($Story){"#$Story "}))$Message`""
+    $command = "git commit $(if($All){'-a '})-m `"$($Type -join '') $($(if($Story){"#$Story "}))$Message`""
     Write-Host "> " -ForegroundColor DarkBlue -NoNewline
     Write-Host $command -ForegroundColor Yellow
     Invoke-Expression $command
