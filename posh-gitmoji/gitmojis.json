@@ -419,6 +419,20 @@
       "code": ":wastebasket:",
       "description": "Deprecate code that needs to be cleaned up.",
       "name": "wastebasket"
+    },
+    {
+      "emoji": "🛂",
+      "entity": "&#x1F6C2;",
+      "code": ":passport_control:",
+      "description": "Work on code related to authorization, roles and permissions.",
+      "name": "passport-control"
+    },
+    {
+      "emoji": "🩹",
+      "entity": "&#x1FA79;",
+      "code": ":adhesive_bandage:",
+      "description": "Simple fix for a non-critical issue.",
+      "name": "adhesive-bandage"
     }
   ]
 }
