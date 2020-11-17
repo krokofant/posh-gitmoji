@@ -66,7 +66,8 @@ $gitmojiTypeCompleter = {
     $codeMatches = $script:EMOJIS | Where-Object { ($_.code).StartsWith($wordToComplete) } | ForEach-Object $RenderHint
     $codeContains = $script:EMOJIS | Where-Object { ($_.code) -match "$wordToComplete" } | ForEach-Object $RenderHint
     $descContains = $script:EMOJIS | Where-Object { ($_.description) -match "$wordToComplete" } | ForEach-Object $RenderHint
-    @($codeMatches) + $codeContains + $descContains | Sort-Object -Unique
+    $abbreviations = $script:EMOJIS | Where-Object { ($_.description -split ' ' -replace '(?<=\w).','' -join '').ToUpper().Contains($wordToComplete) } | ForEach-Object $RenderHint
+    @($codeMatches) + $codeContains + $descContains + $abbreviations | Sort-Object -Unique
 }
 Register-ArgumentCompleter -CommandName gitmoji -ParameterName Type -ScriptBlock $gitmojiTypeCompleter
 
