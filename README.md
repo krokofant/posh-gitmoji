@@ -16,13 +16,13 @@ Now you can type `gitmoji <tab>` and `<tab>` to autocomplete any gitmoji
 
 First install dependencies:
 
-- [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
 - [Windows Terminal](https://github.com/microsoft/terminal)
+- [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) _(optional)_
 
 ```powershell
 # Run as admin
-choco install -y azure-cli
 choco install -y microsoft-windows-terminal
+choco install -y azure-cli
 ```
 
 To autocomplete Azure DevOps story IDs you need to setup your default azure devops organization and project:
